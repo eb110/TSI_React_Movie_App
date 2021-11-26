@@ -10,7 +10,8 @@ function Movie(props) {
     const [filmState, setFilmState] = useState(false);
     const [directorState, setDirectorState] = useState(false);
 
-    const url = "http://ec2-52-23-255-118.compute-1.amazonaws.com:8080";
+    const url = "http://ec2-54-91-153-186.compute-1.amazonaws.com:8080/";
+    // const url = "http://localhost:8080/";
 
     const initContentComponent = (index) => {
         if (index === 0) {
@@ -33,21 +34,26 @@ function Movie(props) {
     return (
         <div>
             <div className="MovieButtons">
-                <button
-                    className="movieButton"
-                    onClick={() => initContentComponent(1)}>
-                    Films
-                </button>
-                <button
-                    className="movieButton"
-                    onClick={() => initContentComponent(0)}>
-                    Actors
-                </button>
-                <button
-                    className="movieButton"
-                    onClick={() => initContentComponent(2)}>
-                    Directors
-                </button>
+
+                <nav className="navbar navbar-dark bg-primary">
+                    <a className="navbar-brand" href="#">Filmnet</a>
+                    <button
+                        className="movieButton"
+                        onClick={() => initContentComponent(1)}>
+                        Films
+                    </button>
+                    <button
+                        className="movieButton"
+                        onClick={() => initContentComponent(0)}>
+                        Actors
+                    </button>
+                    <button
+                        className="movieButton"
+                        onClick={() => initContentComponent(2)}>
+                        Directors
+                    </button>
+                </nav>
+
                 <div className="contentComponent">
                     {actorState && <ActorComponent
                         url={url}

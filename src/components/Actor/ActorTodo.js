@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import ActorFeedback from './ActorFeedback';
 
+import '../../Styles/Actor/ActorTodo.css';
+
 function ActorTodo(props) {
 
     const actorTodo = props.actorTodo;
@@ -65,8 +67,6 @@ function ActorTodo(props) {
         setActorFeedbackListTemp(tempfedb);
     }
 
-
-
     return (
         <div className="actorTodo">
             <div className="actorName">
@@ -83,12 +83,13 @@ function ActorTodo(props) {
             </div>
             <div>
                 <button
-                    className="actorFeedbackButton"
+                    className="actorFeedbackButtonShow"
                     onClick={() => initActorFeedback()}
                 >
                     Show Feedbacks
                 </button>
                 <button
+                    className="actorFeedbackAddFeedbackButton"
                     onClick={() => newFeedbackStateUpdate()}
                 >
                     Add Feedback
@@ -98,11 +99,13 @@ function ActorTodo(props) {
             {newFeedbackState &&
                 <div>
                     <input
+                        className="inputActorFeedback"
                         placeholder="Type the feedback"
                         value={inputFeedbackState.inputFeedback}
                         onChange={handleInputChange}
                     />
                     <button
+                        className="actorFeedbackAddButton"
                         onClick={handleNewInput}
                     >
                         Add

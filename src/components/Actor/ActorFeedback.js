@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import '../../Styles/Actor/ActorFeedback.css';
+
 function ActorFeedback(props) {
 
     const { id, feedback, idUser } = props.actorFeedback;
@@ -31,6 +33,7 @@ function ActorFeedback(props) {
             </div>
             <div>
                 <button
+                    className="actorFeedDeleteButton"
                     onClick={() => props.handleCloseFeedback(id)}
                 >
                     Delete Feedback
