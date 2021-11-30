@@ -49,6 +49,7 @@ function Movie(props) {
                         onClick={() => initContentComponent(0)}>
                         Actors
                     </button>
+                    
                     <button
                         className="movieButton btn-primary btn-lg"
                         onClick={() => initContentComponent(2)}>
