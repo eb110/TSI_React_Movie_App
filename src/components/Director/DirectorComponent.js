@@ -26,14 +26,22 @@ function DirectorComponent(props) {
         return <p> Loading...</p>
 
     return (
-        <div className="director">
-            {directors.map((director) => (
-                <DirectorTodo
-                    url={props.url}
-                    key={'d' + directorIndex++}
-                    directorTodo={director}
-                />
-            ))}
+        <div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div className="director">
+                {directors.map((director) => (
+                    <DirectorTodo
+                        url={props.url}
+                        key={'d' + directorIndex++}
+                        directorTodo={director}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
