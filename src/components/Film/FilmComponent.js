@@ -26,14 +26,22 @@ function FilmComponent(props) {
         return <p> Loading...</p>
 
     return (
-        <div className="film">
-            {films.map((film) => (
-                <FilmTodo
-                    url={props.url}
-                    key={'f' + filmIndex++}
-                    filmTodo={film}
-                />
-            ))}
+        <div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div className="film">
+                {films.map((film) => (
+                    <FilmTodo
+                        url={props.url}
+                        key={'f' + filmIndex++}
+                        filmTodo={film}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
