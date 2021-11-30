@@ -26,7 +26,7 @@ function ActorFeedback(props) {
         <div>
             <div>
                 <br></br>
-                <h5>"{feedback}"</h5>
+                <h6>"{feedback}"</h6>
                 
             </div>
             <div>

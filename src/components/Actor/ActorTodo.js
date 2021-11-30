@@ -68,26 +68,38 @@ function ActorTodo(props) {
 
     return (
         <div className="actorTodo">
-            <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-                <div class="card-title text-center border-light">
-                <div className="actorName">
-                    {name} {surname}
+            <div className="row">
+                <div className="col-lg-4"></div>
+                <div className="col-lg-4">
+                    <div className="row">
+                        <div className="col-lg-3"></div>
+                        <div className="col-lg-6">
+                            <div className="card border-primary w-100">
+                                <div className="actorName">
+                                    <h6>
+                                        {name} {surname}
+                                    </h6>
+                                </div>
+                                {/* <div className="actorSurname">
+                                    {surname}
+                                </div> */}
+                                <div className="actorNationality">
+                                    <h6>
+                                        {nationality}
+                                    </h6>
+                                </div>
+                                <div className="actorDOB">
+                                    <h6>
+                                        {dobTemp}
+                                    </h6>      
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-3"></div>
+                    </div>
                 </div>
-                {/* <div className="actorSurname">
-                    {surname}
-                </div> */}
-                <div className="actorNationality">
-                    {nationality}
-                </div>
-                <div className="actorDOB">
-                    {dobTemp}
-                </div>
-                </div>
+                <div className="col-lg-4"></div>
             </div>
-            </div>
-            <div class="col-lg-4"></div>
 
             <div>
                 <button
