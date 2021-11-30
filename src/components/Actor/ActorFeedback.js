@@ -26,13 +26,16 @@ function ActorFeedback(props) {
         <div>
             <div>
                 <br></br>
-                <h6>"{feedback}"</h6>
+                <h5>"{feedback}"</h5>
 
             </div>
             <div>
-                User: {user.userName}&nbsp;    Email: {user.email}
+                <p class="lead">
+                    User: {user.userName} &nbsp; Email: {user.email}
+                </p>
             </div>
             <div>
+                {/* <br></br> */}
                 <button
                     className="actorFeedDeleteButton btn btn-outline-danger"
                     onClick={() => props.handleCloseFeedback(id)}

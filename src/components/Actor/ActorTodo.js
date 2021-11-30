@@ -76,30 +76,30 @@ function ActorTodo(props) {
                 <div className="col-lg-4"></div>
                 <div className="col-lg-4">
                     <div className="row">
-                        <div className="col-lg-3"></div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-2"></div>
+                        <div className="col-lg-8">
                             <div className="card border-primary w-100">
                                 <div className="actorName">
-                                    <h6>
+                                    <h5>
                                         Name: {name} {surname}
-                                    </h6>
+                                    </h5>
                                 </div>
                                 {/* <div className="actorSurname">
                                     {surname}
                                 </div> */}
                                 <div className="actorNationality">
-                                    <h6>
+                                    <h5>
                                         Nationality: {nationality}
-                                    </h6>
+                                    </h5>
                                 </div>
                                 <div className="actorDOB">
-                                    <h6>
+                                    <h5>
                                         DOB: {dobTemp}
-                                    </h6>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3"></div>
+                        <div className="col-lg-2"></div>
                     </div>
                 </div>
                 <div className="col-lg-4"></div>
