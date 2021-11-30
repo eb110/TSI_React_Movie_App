@@ -29,9 +29,6 @@ function DirectorComponent(props) {
         <div>
             <div>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
             </div>
             <div className="director">
                 {directors.map((director) => (

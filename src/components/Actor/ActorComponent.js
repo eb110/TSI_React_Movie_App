@@ -27,9 +27,6 @@ function ActorComponent(props) {
         <div>
             <div>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
             </div>
             <div className="actor">
                 {actors.map((actor) => (

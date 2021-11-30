@@ -29,9 +29,6 @@ function FilmComponent(props) {
         <div>
             <div>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
             </div>
             <div className="film">
                 {films.map((film) => (

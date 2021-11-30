@@ -82,11 +82,19 @@ function Movie(props) {
           Log-out
           </button>
         </nav>
+        <div className="card bg-secondary">
+          <div>&emsp;</div>
+          <div>&emsp;</div>
+          <div>&emsp;</div>
+          <div>&emsp;</div>
+
+        </div>
         <div className="contentComponent">
           {actorState && <ActorComponent url={url} />}
           {filmState && <FilmComponent url={url} />}
           {directorState && <DirectorComponent url={url} />}
         </div>
+        
       </div>
     </div>
   );
