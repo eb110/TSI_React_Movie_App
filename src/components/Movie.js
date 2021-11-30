@@ -39,13 +39,12 @@ function Movie(props) {
       <div className="MovieButtons bg-light">
         <nav className="navbar fixed-top  navbar-dark bg-primary">
           <a className="navbar-brand text-large" href="#">
-            <strong>Filmnet</strong>
+            <h3 class="text-light">&emsp;&emsp;Filmnet.  </h3>
+            {/* <h6 class="text-light">&emsp;&emsp;&emsp;&emsp; The internet's <em> favourite </em> movie database</h6> */}
           </a>
-          <p class="text-secondary">
-            <strong>
-              The internet's <em> favourite </em> movie database
-            </strong>
-          </p>
+          <a>
+            <h5 class="text-warning"> The internet's <em> favourite </em> movie database</h5>          
+          </a>
           <button
             className="movieButton btn-primary btn-sm"
             onClick={() => initContentComponent(1)}
