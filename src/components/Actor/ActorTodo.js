@@ -66,6 +66,10 @@ function ActorTodo(props) {
         setActorFeedbackListTemp(tempfedb);
     }
 
+    const updateFdb = async (idUpdate) => {
+
+    }
+
     return (
         <div className="actorTodo">
             <div className="row">
