@@ -39,7 +39,7 @@ function Movie(props) {
       <div className="MovieButtons bg-light">
         <nav className="navbar fixed-top  navbar-dark bg-primary">
           <a className="navbar-brand text-large" href="#">
-            <h3 class="text-light">&emsp;&emsp;Filmnet.  </h3>
+            <h2 class="text-light">&emsp;&emsp;Filmnet.  </h2>
             {/* <h6 class="text-light">&emsp;&emsp;&emsp;&emsp; The internet's <em> favourite </em> movie database</h6> */}
           </a>
           <a>
