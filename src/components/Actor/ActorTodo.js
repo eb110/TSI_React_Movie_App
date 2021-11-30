@@ -77,7 +77,7 @@ function ActorTodo(props) {
                             <div className="card border-primary w-100">
                                 <div className="actorName">
                                     <h6>
-                                        {name} {surname}
+                                        Name: {name} {surname}
                                     </h6>
                                 </div>
                                 {/* <div className="actorSurname">
@@ -85,12 +85,12 @@ function ActorTodo(props) {
                                 </div> */}
                                 <div className="actorNationality">
                                     <h6>
-                                        {nationality}
+                                        Nationality: {nationality}
                                     </h6>
                                 </div>
                                 <div className="actorDOB">
                                     <h6>
-                                        {dobTemp}
+                                        DOB: {dobTemp}
                                     </h6>      
                                 </div>
                             </div>
