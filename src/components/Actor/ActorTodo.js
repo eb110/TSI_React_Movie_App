@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import ActorFeedback from './ActorFeedback';
-
 import '../../Styles/Actor/ActorTodo.css';
 
 function ActorTodo(props) {
@@ -69,27 +68,36 @@ function ActorTodo(props) {
 
     return (
         <div className="actorTodo">
-            <div className="actorName">
-                {name}
+            <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="card-title text-center border-light">
+                <div className="actorName">
+                    {name} {surname}
+                </div>
+                {/* <div className="actorSurname">
+                    {surname}
+                </div> */}
+                <div className="actorNationality">
+                    {nationality}
+                </div>
+                <div className="actorDOB">
+                    {dobTemp}
+                </div>
+                </div>
             </div>
-            <div className="actorSurname">
-                {surname}
             </div>
-            <div className="actorNationality">
-                {nationality}
-            </div>
-            <div className="actorDOB">
-                {dobTemp}
-            </div>
+            <div class="col-lg-4"></div>
+
             <div>
                 <button
-                    className="actorFeedbackButtonShow"
+                    className="actorFeedbackButtonShow btn btn-outline-info"
                     onClick={() => initActorFeedback()}
                 >
-                    Show Feedbacks
+                    Show Feedback
                 </button>
                 <button
-                    className="actorFeedbackAddFeedbackButton"
+                    className="actorFeedbackAddFeedbackButton btn btn-outline-secondary"
                     onClick={() => newFeedbackStateUpdate()}
                 >
                     Add Feedback
@@ -99,13 +107,13 @@ function ActorTodo(props) {
             {newFeedbackState &&
                 <div>
                     <input
-                        className="inputActorFeedback"
-                        placeholder="Type the feedback"
+                        className="inputActorFeedback btn btn-light "
+                        placeholder="Type the feedback..."
                         value={inputFeedbackState.inputFeedback}
                         onChange={handleInputChange}
                     />
                     <button
-                        className="actorFeedbackAddButton"
+                        className="actorFeedbackAddButton btn btn-outline-info"
                         onClick={handleNewInput}
                     >
                         Add

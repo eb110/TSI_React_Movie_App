@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import '../../Styles/Actor/ActorFeedback.css';
 
 function ActorFeedback(props) {
@@ -26,14 +25,16 @@ function ActorFeedback(props) {
     return (
         <div>
             <div>
-                {feedback}
+                <br></br>
+                <h5>"{feedback}"</h5>
+                
             </div>
             <div>
                 {user.name}&nbsp;{user.surname}
             </div>
             <div>
                 <button
-                    className="actorFeedDeleteButton"
+                    className="actorFeedDeleteButton btn btn-outline-danger"
                     onClick={() => props.handleCloseFeedback(id)}
                 >
                     Delete Feedback

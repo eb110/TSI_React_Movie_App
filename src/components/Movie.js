@@ -35,22 +35,22 @@ function Movie(props) {
 
     return (
         <div>
-            <div className="MovieButtons">
+            <div className="MovieButtons bg-light">
 
                 <nav className="navbar navbar-dark bg-primary">
-                    <a className="navbar-brand" href="#">Filmnet</a>
+                    <a className="navbar-brand text-large" href="#">Filmnet</a>
                     <button
-                        className="movieButton"
+                        className="movieButton btn-primary btn-lg"
                         onClick={() => initContentComponent(1)}>
                         Films
                     </button>
                     <button
-                        className="movieButton"
+                        className="movieButton btn-primary btn-lg"
                         onClick={() => initContentComponent(0)}>
                         Actors
                     </button>
                     <button
-                        className="movieButton"
+                        className="movieButton btn-primary btn-lg"
                         onClick={() => initContentComponent(2)}>
                         Directors
                     </button>
@@ -69,7 +69,6 @@ function Movie(props) {
                 </div>
             </div>
         </div>
-        
     );
 }
 
