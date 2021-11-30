@@ -27,10 +27,10 @@ function ActorFeedback(props) {
             <div>
                 <br></br>
                 <h5>"{feedback}"</h5>
-                
+
             </div>
             <div>
-                {user.name}&nbsp;{user.surname}
+                {user.userName}&nbsp;{user.email}
             </div>
             <div>
                 <button

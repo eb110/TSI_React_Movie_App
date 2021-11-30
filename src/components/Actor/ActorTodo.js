@@ -68,26 +68,26 @@ function ActorTodo(props) {
 
     return (
         <div className="actorTodo">
-            <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-                <div class="card-title text-center border-light">
-                <div className="actorName">
-                    {name} {surname}
-                </div>
-                {/* <div className="actorSurname">
+            <div className="row">
+                <div className="col-lg-4"></div>
+                <div className="col-lg-4">
+                    <div className="card-title text-center border-light">
+                        <div className="actorName">
+                            {name} {surname}
+                        </div>
+                        {/* <div className="actorSurname">
                     {surname}
                 </div> */}
-                <div className="actorNationality">
-                    {nationality}
-                </div>
-                <div className="actorDOB">
-                    {dobTemp}
-                </div>
+                        <div className="actorNationality">
+                            {nationality}
+                        </div>
+                        <div className="actorDOB">
+                            {dobTemp}
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            <div class="col-lg-4"></div>
+            <div className="col-lg-4"></div>
 
             <div>
                 <button
