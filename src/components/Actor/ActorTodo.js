@@ -119,7 +119,7 @@ function ActorTodo(props) {
             {newFeedbackState &&
                 <div>
                     <input
-                        className="inputActorFeedback btn btn-light "
+                        className="inputActorFeedback btn btn-outline-info "
                         placeholder="Type the feedback..."
                         value={inputFeedbackState.inputFeedback}
                         onChange={handleInputChange}
