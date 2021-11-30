@@ -42,7 +42,7 @@ function Movie(props) {
             <h2 class="text-light">&emsp;&emsp;Filmnet.</h2>
           </a>
           <a>
-            <h5 class="text-warning"> The internet's <em> favourite </em> movie database</h5>          
+            <h5 class="text-warning"> <em> the ultimate film database....</em> </h5>          
           </a>
           <button
             className="movieButton btn-primary btn-sm"
