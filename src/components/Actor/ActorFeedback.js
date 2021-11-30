@@ -43,9 +43,9 @@ function ActorFeedback(props) {
                     Delete
                 </button>
                 <button className="btn btn-outline-warning"
-                    onClick={() => props.handleUpdateFeedback(id)}
+                    onClick={() => props.handleUpdateFeedback(id, feedback)}
                 >
-                    Update
+                    Update Feedback
                 </button>
             </div>
         </div>
