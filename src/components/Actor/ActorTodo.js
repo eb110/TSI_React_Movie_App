@@ -99,7 +99,7 @@ function ActorTodo(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-2"></div>
+                        <div className="col-lg-"></div>
                     </div>
                 </div>
                 <div className="col-lg-4"></div>

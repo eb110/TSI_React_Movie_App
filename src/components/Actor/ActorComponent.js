@@ -24,14 +24,21 @@ function ActorComponent(props) {
         return <p> Loading...</p>
 
     return (
-        <div className="actor">
-            {actors.map((actor) => (
-                <ActorTodo
-                    url={props.url}
-                    key={'a' + actorIndex++}
-                    actorTodo={actor}
-                />
-            ))}
+        <div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div className="actor">
+                {actors.map((actor) => (
+                    <ActorTodo
+                        url={props.url}
+                        key={'a' + actorIndex++}
+                        actorTodo={actor}
+                    />
+                ))}
+            </div>      
         </div>
     );
 }
