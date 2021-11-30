@@ -9,11 +9,12 @@ function ActorTodo(props) {
     const { id, name, surname, nationality, dob, actorFeedbackList } = actorTodo;
     let dobTemp = dob.substring(0, dob.indexOf('T'));
     let actorFeedbackIndex = 0;
+    let putId = 0;
 
     const [actorFeedbackListTemp, setActorFeedbackListTemp] = useState(actorFeedbackList.slice());
     const [showActorFeedbacks, setShowActorFeedbacks] = useState(false);
     const [newFeedbackState, setNewFeedbackState] = useState(false);
-    const [inputFeedbackState, setInputFeedbackState] = useState({ inputFeedback: '', error: null });
+    const [inputFeedbackState, setInputFeedbackState] = useState({ inputFeedback: '', error: null, idFedb: 0 });
     const [updateFeedback, setUpdateFeedback] = useState(false);
 
     const initActorFeedback = () => {
@@ -56,8 +57,8 @@ function ActorTodo(props) {
         updateFeedbacks();
     }
 
+    //button Update
     const handleUpdateInit = async () => {
-        console.log(inputFeedbackState.inputFeedback);
         if (!inputFeedbackState.inputFeedback) {
             console.log("empty" + inputFeedbackState.inputFeedback);
             setInputFeedbackState({
@@ -65,6 +66,25 @@ function ActorTodo(props) {
             });
             return;
         }
+        let newFedb = {
+            feedback: inputFeedbackState.inputFeedback,
+            idActor: id,
+            idUser: 1
+        }
+        putId = inputFeedbackState.idFedb
+        console.log(newFedb)
+        console.log(putId)
+        console.log(props)
+
+        await fetch(`${props.url}/actorFeedback/add/${putId}`, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newFedb)
+        });
+        updateFeedbacks();
     }
 
     const handleNewInput = async () => {
@@ -97,11 +117,15 @@ function ActorTodo(props) {
         setActorFeedbackListTemp(tempfedb);
     }
 
+    //update confirm button from actor todo
     const handleUpdateFdb = async (idUpdate, feedback) => {
+        putId = idUpdate;
+        console.log(putId)
         setInputFeedbackState({
             ...inputFeedbackState,
             inputFeedback: feedback,
-            error: null
+            error: null,
+            idFedb: idUpdate
         });
         setNewFeedbackState(false);
         updateFeedbackInit();
