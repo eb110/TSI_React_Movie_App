@@ -37,11 +37,11 @@ function Movie(props) {
   return (
     <div>
       <div className="MovieButtons bg-light">
-        <nav className="navbar navbar-dark bg-primary">
+        <nav className="navbar fixed-top  navbar-dark bg-primary">
           <a className="navbar-brand text-large" href="#">
             <strong>Filmnet</strong>
           </a>
-          <p class="text-muted">
+          <p class="text-secondary">
             <strong>
               The internet's <em> favourite </em> movie database
             </strong>
@@ -83,6 +83,7 @@ function Movie(props) {
           >
             Log-out
           </button>
+          
         </nav>
 
         <div className="contentComponent">
