@@ -31,6 +31,11 @@ function Movie(props) {
             setDirectorState(true);
             setActorState(false);
         }
+        else if (index === 3) {
+            setFilmState(false);
+            setDirectorState(false);
+            setActorState(false);
+        }
     }
 
     return (
@@ -49,11 +54,26 @@ function Movie(props) {
                         onClick={() => initContentComponent(0)}>
                         Actors
                     </button>
-                    
+
                     <button
                         className="movieButton btn-primary btn-lg"
                         onClick={() => initContentComponent(2)}>
                         Directors
+                    </button>
+                    <button
+                        className="movieButton btn-primary btn-lg"
+                        onClick={() => initContentComponent(3)}>
+                        Register
+                    </button>
+                    <button
+                        className="movieButton btn-primary btn-lg"
+                        onClick={() => initContentComponent(3)}>
+                        Log-in
+                    </button>
+                    <button
+                        className="movieButton btn-primary btn-lg"
+                        onClick={() => initContentComponent(3)}>
+                        Log-out
                     </button>
                 </nav>
 
