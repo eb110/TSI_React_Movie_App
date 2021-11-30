@@ -11,11 +11,11 @@ function DirectorTodo(props) {
     return (
         <div className="directorTodo">
             <div className="directorName">
-                {name}
+                {name} {surname}
             </div>
-            <div className="directorSurname">
+            {/* <div className="directorSurname">
                 {surname}
-            </div>
+            </div> */}
             <div className="directorNationality">
                 {nationality}
             </div>
