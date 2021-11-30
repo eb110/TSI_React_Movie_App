@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import ActorFeedback from './ActorFeedback';
 import '../../Styles/Actor/ActorTodo.css';
-import userEvent from '@testing-library/user-event';
 
 function ActorTodo(props) {
 
@@ -24,6 +23,10 @@ function ActorTodo(props) {
     }
 
     const newFeedbackStateUpdate = () => {
+        setInputFeedbackState({
+            ...inputFeedbackState,
+            error: null
+        });
         if (updateFeedback) {
             return;
         }
@@ -43,8 +46,25 @@ function ActorTodo(props) {
     }
 
     const handleDeleteFeedback = async (idDelete) => {
+        setInputFeedbackState({
+            ...inputFeedbackState,
+            error: null
+        });
+        setUpdateFeedback(false);
+        setNewFeedbackState(false);
         await fetch(`${props.url}/actorFeedback/deleteById/${idDelete}`, { method: 'DELETE' });
         updateFeedbacks();
+    }
+
+    const handleUpdateInit = async () => {
+        console.log(inputFeedbackState.inputFeedback);
+        if (!inputFeedbackState.inputFeedback) {
+            console.log("empty" + inputFeedbackState.inputFeedback);
+            setInputFeedbackState({
+                error: "empty feedback value"
+            });
+            return;
+        }
     }
 
     const handleNewInput = async () => {
@@ -80,11 +100,14 @@ function ActorTodo(props) {
     const handleUpdateFdb = async (idUpdate, feedback) => {
         setInputFeedbackState({
             ...inputFeedbackState,
-            inputFeedback: feedback
+            inputFeedback: feedback,
+            error: null
         });
         setNewFeedbackState(false);
         updateFeedbackInit();
     }
+
+    const { error } = inputFeedbackState;
 
     return (
         <div className="actorTodo">
@@ -119,6 +142,7 @@ function ActorTodo(props) {
             </div>
 
             <div>
+                {error && <p>{error}</p>}
                 <button
                     className="actorFeedbackButtonShow btn btn-outline-info"
                     onClick={() => initActorFeedback()}
@@ -159,7 +183,7 @@ function ActorTodo(props) {
                     />
                     <button
                         className="updateFeedbackAddButton btn btn-outline-info"
-                        onClick={handleNewInput}
+                        onClick={handleUpdateInit}
                     >
                         Update
                     </button>
