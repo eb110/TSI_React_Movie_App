@@ -67,7 +67,7 @@ function ActorTodo(props) {
     }
 
     const handleUpdateFdb = async (idUpdate) => {
-
+        newFeedbackStateUpdate();
     }
 
     return (
@@ -84,9 +84,6 @@ function ActorTodo(props) {
                                         Name: {name} {surname}
                                     </h6>
                                 </div>
-                                {/* <div className="actorSurname">
-                                    {surname}
-                                </div> */}
                                 <div className="actorNationality">
                                     <h6>
                                         Nationality: {nationality}
