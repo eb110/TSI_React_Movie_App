@@ -91,7 +91,7 @@ function ActorTodo(props) {
                                 <div className="actorDOB">
                                     <h6>
                                         DOB: {dobTemp}
-                                    </h6>      
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -140,6 +140,7 @@ function ActorTodo(props) {
                             key={'af' + actorFeedbackIndex++}
                             actorFeedback={actorFeedback}
                             handleCloseFeedback={handleDeleteFeedback}
+                            handleUpdateFeedback={handleUpdateFdb}
                         />
                     ))}
                 </div>}
