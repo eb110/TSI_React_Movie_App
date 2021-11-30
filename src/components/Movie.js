@@ -43,35 +43,35 @@ function Movie(props) {
             <div className="MovieButtons bg-light">
 
                 <nav className="navbar navbar-dark bg-primary">
-                    <a className="navbar-brand text-large" href="#">Filmnet</a>
+                    <a className="navbar-brand text-large" href="#"><strong>Filmnet</strong></a>
                     <button
-                        className="movieButton btn-primary btn-lg"
+                        className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(1)}>
                         Films
                     </button>
                     <button
-                        className="movieButton btn-primary btn-lg"
+                        className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(0)}>
                         Actors
                     </button>
 
                     <button
-                        className="movieButton btn-primary btn-lg"
+                        className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(2)}>
                         Directors
                     </button>
                     <button
-                        className="movieButton btn-primary btn-lg"
+                        className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(3)}>
                         Register
                     </button>
                     <button
-                        className="movieButton btn-primary btn-lg"
+                        className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(3)}>
                         Log-in
                     </button>
                     <button
-                        className="movieButton btn-primary btn-lg"
+                        className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(3)}>
                         Log-out
                     </button>
