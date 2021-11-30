@@ -41,7 +41,7 @@ function Movie(props) {
           <a className="navbar-brand text-large" href="#">
             <strong>Filmnet</strong>
           </a>
-          <p class="text-secondary">
+          <p class="text-warning">
             <strong>
               The internet's <em> favourite </em> movie database
             </strong>
@@ -76,16 +76,14 @@ function Movie(props) {
             onClick={() => initContentComponent(3)}
           >
             Log-in
-          </button>
+            </button>
           <button
             className="movieButton btn-primary btn-sm"
             onClick={() => initContentComponent(3)}
           >
-            Log-out
+          Log-out
           </button>
-          
         </nav>
-
         <div className="contentComponent">
           {actorState && <ActorComponent url={url} />}
           {filmState && <FilmComponent url={url} />}
