@@ -56,6 +56,7 @@ function Movie(props) {
                     </button>
                 </nav>
 
+
                 <div className="contentComponent">
                     {actorState && <ActorComponent
                         url={url}
