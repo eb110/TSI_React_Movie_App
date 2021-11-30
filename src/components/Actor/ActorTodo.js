@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import ActorFeedback from './ActorFeedback';
 import '../../Styles/Actor/ActorTodo.css';
+import userEvent from '@testing-library/user-event';
 
 function ActorTodo(props) {
 
@@ -14,13 +15,23 @@ function ActorTodo(props) {
     const [showActorFeedbacks, setShowActorFeedbacks] = useState(false);
     const [newFeedbackState, setNewFeedbackState] = useState(false);
     const [inputFeedbackState, setInputFeedbackState] = useState({ inputFeedback: '', error: null });
+    const [updateFeedback, setUpdateFeedback] = useState(false);
 
     const initActorFeedback = () => {
         setShowActorFeedbacks(!showActorFeedbacks);
+        setUpdateFeedback(false);
+        setNewFeedbackState(false);
     }
 
     const newFeedbackStateUpdate = () => {
+        if (updateFeedback) {
+            return;
+        }
         setNewFeedbackState(!newFeedbackState);
+    }
+
+    const updateFeedbackInit = () => {
+        setUpdateFeedback(!updateFeedback);
     }
 
     const handleInputChange = (event) => {
@@ -66,8 +77,13 @@ function ActorTodo(props) {
         setActorFeedbackListTemp(tempfedb);
     }
 
-    const handleUpdateFdb = async (idUpdate) => {
-        newFeedbackStateUpdate();
+    const handleUpdateFdb = async (idUpdate, feedback) => {
+        setInputFeedbackState({
+            ...inputFeedbackState,
+            inputFeedback: feedback
+        });
+        setNewFeedbackState(false);
+        updateFeedbackInit();
     }
 
     return (
@@ -130,6 +146,22 @@ function ActorTodo(props) {
                         onClick={handleNewInput}
                     >
                         Add
+                    </button>
+                </div>}
+
+            {updateFeedback &&
+                <div>
+                    <input
+                        className="updateActorFeedback btn btn-outline-info "
+                        placeholder={inputFeedbackState.inputFeedback}
+                        value={inputFeedbackState.inputFeedback}
+                        onChange={handleInputChange}
+                    />
+                    <button
+                        className="updateFeedbackAddButton btn btn-outline-info"
+                        onClick={handleNewInput}
+                    >
+                        Update
                     </button>
                 </div>}
 
