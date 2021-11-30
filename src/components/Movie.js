@@ -44,6 +44,7 @@ function Movie(props) {
 
                 <nav className="navbar navbar-dark bg-primary">
                     <a className="navbar-brand text-large" href="#"><strong>Filmnet</strong></a>
+                    <p class="text-muted"><strong>The internet's <em> favourite </em> movie database</strong></p>
                     <button
                         className="movieButton btn-primary btn-sm"
                         onClick={() => initContentComponent(1)}>
