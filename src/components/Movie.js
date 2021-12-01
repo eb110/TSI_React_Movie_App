@@ -39,10 +39,10 @@ function Movie(props) {
       <div className="MovieButtons bg-light">
         <nav className="navbar fixed-top  navbar-dark bg-primary">
           <a className="navbar-brand text-large" href="#">
-            <h2 class="text-light">&emsp;&emsp;Filmnet.</h2>
+            <h2 className="text-light">&emsp;&emsp;Filmnet.</h2>
           </a>
           <a>
-            <h5 class="text-warning"> The internet's <em> favourite </em> movie database</h5>          
+            <h5 className="text-warning"> The internet's <em> favourite </em> movie database</h5>
           </a>
           <button
             className="movieButton btn-primary btn-sm"
@@ -74,12 +74,12 @@ function Movie(props) {
             onClick={() => initContentComponent(3)}
           >
             Log-in
-            </button>
+          </button>
           <button
             className="movieButton btn-primary btn-sm"
             onClick={() => initContentComponent(3)}
           >
-          Log-out
+            Log-out
           </button>
         </nav>
         <div className="card bg-secondary">
@@ -94,7 +94,7 @@ function Movie(props) {
           {filmState && <FilmComponent url={url} />}
           {directorState && <DirectorComponent url={url} />}
         </div>
-        
+
       </div>
     </div>
   );
