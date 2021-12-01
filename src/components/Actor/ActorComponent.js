@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import bale from '../../img/bale.JPG';
+import brando from '../../img/brando.JPG';
+import nicholson from '../../img/nicholson.JPG';
+import robbins from '../../img/robbins.JPG';
+import travolta from '../../img/travolta.JPG';
 
 import ActorTodo from './ActorTodo';
 
 function ActorComponent(props) {
 
+    const pict = [brando, robbins, bale, travolta, nicholson]
+    let pictIndex = 0;
     const [actors, setActors] = useState([]);
     const [actorUrl, setActorUrl] = useState(`${props.url}/actor/getAll`)
     const [isLoading, setIsLoading] = useState(true);
@@ -34,9 +41,10 @@ function ActorComponent(props) {
                         url={props.url}
                         key={'a' + actorIndex++}
                         actorTodo={actor}
+                        picture={pict[pictIndex++]}
                     />
                 ))}
-            </div>      
+            </div>
         </div>
     );
 }
