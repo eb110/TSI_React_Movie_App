@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import coppola from '../../img/coppola.JPG';
+import kubrik from '../../img/kubrik.JPG';
+import darabont from '../../img/darabont.JPG';
+import nolan from '../../img/nolan.JPG';
+import tarantino from '../../img/tarantino.JPG';
 
 import DirectorTodo from './DirectorTodo';
 
 function DirectorComponent(props) {
 
+    const pict = [coppola, darabont, nolan, tarantino, kubrik]
+    let pictIndex = 0;
     const [directors, setDirectors] = useState([]);
     const [directorUrl, setDirectorUrl] = useState(`${props.url}/director/getAll`)
     const [isLoading, setIsLoading] = useState(true);
@@ -20,8 +27,6 @@ function DirectorComponent(props) {
         myFetch();
     }, [directorUrl])
 
-    console.log(directors);
-
     if (isLoading)
         return <p> Loading...</p>
 
@@ -36,6 +41,7 @@ function DirectorComponent(props) {
                         url={props.url}
                         key={'d' + directorIndex++}
                         directorTodo={director}
+                        picture={pict[pictIndex++]}
                     />
                 ))}
             </div>
