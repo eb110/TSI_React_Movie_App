@@ -21,7 +21,7 @@ function ActorFeedback(props) {
 
     if (isLoading)
         return <p> Loading...</p>
-
+        
     return (
         <div>
             <div>
