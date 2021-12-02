@@ -1,116 +1,124 @@
 import React, { useState } from 'react';
 
-import FilmFeedback from './FilmFeedback';
-import '../../Styles/Film/FilmTodo.css';
+import FilmFeedback from "./FilmFeedback";
+import "../../Styles/Film/FilmTodo.css";
 
 function FilmTodo(props) {
-
     const filmTodo = props.filmTodo;
     const { id, title, description, length, rating, filmFeedbackList } = filmTodo;
     let filmFeedbackIndex = 0;
     let putId = 0;
 
-    const [filmFeedbackListTemp, setFilmFeedbackListTemp] = useState(filmFeedbackList.slice());
+    const [filmFeedbackListTemp, setFilmFeedbackListTemp] = useState(
+        filmFeedbackList.slice()
+    );
     const [showFilmFeedbacks, setShowFilmFeedbacks] = useState(false);
     const [newFeedbackState, setNewFeedbackState] = useState(false);
-    const [inputFeedbackState, setInputFeedbackState] = useState({ inputFeedback: '', error: null, idFedb: 0 });
+    const [inputFeedbackState, setInputFeedbackState] = useState({
+        inputFeedback: "",
+        error: null,
+        idFedb: 0,
+    });
     const [updateFeedback, setUpdateFeedback] = useState(false);
 
     const initFilmFeedback = () => {
         setShowFilmFeedbacks(!showFilmFeedbacks);
         setUpdateFeedback(false);
         setNewFeedbackState(false);
-    }
+    };
 
     const newFeedbackStateUpdate = () => {
         setInputFeedbackState({
             ...inputFeedbackState,
-            error: null
+            error: null,
         });
         if (updateFeedback) {
             return;
         }
         setNewFeedbackState(!newFeedbackState);
-    }
+    };
 
     const updateFeedbackInit = () => {
         setUpdateFeedback(!updateFeedback);
-    }
+    };
 
     const handleInputChange = (event) => {
         const { value } = event.target;
         setInputFeedbackState({
             ...inputFeedbackState,
-            inputFeedback: value
+            inputFeedback: value,
         });
-    }
+    };
 
     const handleDeleteFeedback = async (idDelete) => {
         setInputFeedbackState({
             ...inputFeedbackState,
-            error: null
+            error: null,
         });
         setUpdateFeedback(false);
         setNewFeedbackState(false);
-        await fetch(`${props.url}/filmFeedback/deleteById/${idDelete}`, { method: 'DELETE' });
+        await fetch(`${props.url}/filmFeedback/deleteById/${idDelete}`, {
+            method: "DELETE",
+        });
         updateFeedbacks();
-    }
+    };
 
     //button Update
     const handleUpdateInit = async () => {
         if (!inputFeedbackState.inputFeedback) {
             console.log("empty" + inputFeedbackState.inputFeedback);
             setInputFeedbackState({
-                error: "empty feedback value"
+                error: "empty feedback value",
             });
             return;
         }
         let newFedb = {
             feedback: inputFeedbackState.inputFeedback,
             idFilm: id,
-            idUser: 1
-        }
-        putId = inputFeedbackState.idFedb
+            idUser: 1,
+        };
+        putId = inputFeedbackState.idFedb;
 
         await fetch(`${props.url}/filmFeedback/add/${putId}`, {
-            method: 'PUT',
+            method: "PUT",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                Accept: "application/json",
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(newFedb)
+            body: JSON.stringify(newFedb),
         });
         updateFeedbacks();
-    }
+    };
 
     const handleNewInput = async () => {
         if (!inputFeedbackState.inputFeedback) {
             setInputFeedbackState({
-                error: "empty feedback value"
+                error: "empty feedback value",
             });
             return;
         }
         let newFedb = {
             feedback: inputFeedbackState.inputFeedback,
             idFilm: id,
-            idUser: 1
-        }
+            idUser: 1,
+        };
         await fetch(`${props.url}/filmFeedback/add`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                Accept: "application/json",
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(newFedb)
+            body: JSON.stringify(newFedb),
         });
         updateFeedbacks();
-    }
+    };
 
     const updateFeedbacks = async () => {
         let tempfedb = await fetch(`${props.url}/filmFeedback/getAll`)
-            .then((res) => res.json()).then((data) => data.filter((film) => film.idFilm === id));
+            .then((res) => res.json())
+            .then((data) => data.filter((film) => film.idFilm === id));
         setFilmFeedbackListTemp(tempfedb);
-    }
+    };
 
     //update confirm button from film todo
     const handleUpdateFdb = async (idUpdate, feedback) => {
@@ -119,11 +127,11 @@ function FilmTodo(props) {
             ...inputFeedbackState,
             inputFeedback: feedback,
             error: null,
-            idFedb: idUpdate
+            idFedb: idUpdate,
         });
         setNewFeedbackState(false);
         updateFeedbackInit();
-    }
+    };
 
     const { error } = inputFeedbackState;
 
@@ -140,9 +148,7 @@ function FilmTodo(props) {
                                     <img src={props.picture} alt="fireSpot" />
                                 </div>
                                 <div className="filmName">
-                                    <h5>
-                                        Title: {title}
-                                    </h5>
+                                    <h5>Title: {title}</h5>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +174,7 @@ function FilmTodo(props) {
                 </button>
             </div>
 
-            {newFeedbackState &&
+            {newFeedbackState && (
                 <div>
                     <input
                         className="inputFilmFeedback btn btn-outline-info "
@@ -182,9 +188,10 @@ function FilmTodo(props) {
                     >
                         Add
                     </button>
-                </div>}
+                </div>
+            )}
 
-            {updateFeedback &&
+            {updateFeedback && (
                 <div>
                     <input
                         className="updateFilmFeedback btn btn-outline-info "
@@ -198,20 +205,22 @@ function FilmTodo(props) {
                     >
                         Update
                     </button>
-                </div>}
+                </div>
+            )}
 
-            {showFilmFeedbacks &&
+            {showFilmFeedbacks && (
                 <div>
                     {filmFeedbackListTemp.map((filmFeedback) => (
                         <FilmFeedback
                             url={props.url}
-                            key={'ff' + filmFeedbackIndex++}
+                            key={"ff" + filmFeedbackIndex++}
                             filmFeedback={filmFeedback}
                             handleCloseFeedback={handleDeleteFeedback}
                             handleUpdateFeedback={handleUpdateFdb}
                         />
                     ))}
-                </div>}
+                </div>
+            )}
 
             <hr></hr>
         </div>
