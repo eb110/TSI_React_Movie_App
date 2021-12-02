@@ -132,11 +132,12 @@ function ActorTodo(props) {
     }
 
     const { error } = inputFeedbackState;
-
+    
     return (
         <div className="actorTodo">
             <div className="row">
-                <div className="col-lg-4"></div>
+                <div className="col-lg-4">
+                </div>
                 <div className="col-lg-4">
                     <div className="row">
                         <div className="col-lg-2"></div>
@@ -166,7 +167,6 @@ function ActorTodo(props) {
                     </div>
                 </div>
                 <div className="col-lg-4">
-
                 </div>
             </div>
 
@@ -230,7 +230,6 @@ function ActorTodo(props) {
                         />
                     ))}
                 </div>}
-
             <hr></hr>
         </div>
     );
