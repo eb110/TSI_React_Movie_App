@@ -167,10 +167,6 @@ function ActorTodo(props) {
                     </div>
                 </div>
                 <div className="col-lg-4">
-<<<<<<< HEAD
-=======
-
->>>>>>> 4c3f036a60836b8df8ac3472b97d17a0cbb0ac74
                 </div>
             </div>
 
