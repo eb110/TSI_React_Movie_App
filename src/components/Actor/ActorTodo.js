@@ -142,6 +142,9 @@ function ActorTodo(props) {
                         <div className="col-lg-2"></div>
                         <div className="col-lg-8">
                             <div className="card border-primary w-100">
+                                <div>
+                                    <img src={props.picture} alt="fireSpot" />
+                                </div>
                                 <div className="actorName">
                                     <h5>
                                         Name: {name} {surname}
@@ -163,7 +166,7 @@ function ActorTodo(props) {
                     </div>
                 </div>
                 <div className="col-lg-4">
-                    
+
                 </div>
             </div>
 

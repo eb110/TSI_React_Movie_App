@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import darkKnight from '../../img/darkKnight.JPG';
+import godfather from '../../img/godfather.JPG';
+import pulpFiction from '../../img/pulpFiction.JPG';
+import shawshank from '../../img/shawshank.JPG';
+import shining from '../../img/shining.JPG';
 
 import FilmTodo from './FilmTodo';
 
 function FilmComponent(props) {
 
+    const pict = [godfather, shawshank, darkKnight, pulpFiction, shining]
+    let pictIndex = 0;
     const [films, setFilms] = useState([]);
     const [filmUrl, setFilmUrl] = useState(`${props.url}/film/getAll`)
     const [isLoading, setIsLoading] = useState(true);
@@ -20,8 +27,6 @@ function FilmComponent(props) {
         myFetch();
     }, [filmUrl])
 
-    console.log(films);
-
     if (isLoading)
         return <p> Loading...</p>
 
@@ -36,6 +41,7 @@ function FilmComponent(props) {
                         url={props.url}
                         key={'f' + filmIndex++}
                         filmTodo={film}
+                        picture={pict[pictIndex++]}
                     />
                 ))}
             </div>
