@@ -9,7 +9,7 @@ function Movie(props) {
   const [filmState, setFilmState] = useState(false);
   const [directorState, setDirectorState] = useState(false);
 
-  const url = "http://ec2-107-22-51-30.compute-1.amazonaws.com:8080/";
+  const url = "http://ec2-54-196-24-173.compute-1.amazonaws.com:8080/";
   // const url = "http://localhost:8080/";
   // docker
   //const url = "http://localhost:8000/";
