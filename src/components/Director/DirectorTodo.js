@@ -1,3 +1,9 @@
+/*
+Project Author: Wladyslaw Figura
+Company: The Software Institute
+Date: October 2021
+*/
+
 import React, { useState } from 'react';
 
 import DirectorFeedback from './DirectorFeedback';

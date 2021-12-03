@@ -1,8 +1,16 @@
+/*
+Project Author: Wladyslaw Figura
+Company: The Software Institute
+Date: October 2021
+*/
+
 import React, { useState } from "react";
 
 import ActorComponent from "./Actor/ActorComponent";
 import FilmComponent from "./Film/FilmComponent";
 import DirectorComponent from "./Director/DirectorComponent";
+
+//Startin point of the application
 
 function Movie(props) {
   const [actorState, setActorState] = useState(false);
@@ -14,6 +22,8 @@ function Movie(props) {
   // docker
   //const url = "http://localhost:8000/";
 
+
+  //Descission making functionality according to user actions
   const initContentComponent = (index) => {
     if (index === 0) {
       setFilmState(false);
@@ -33,6 +43,8 @@ function Movie(props) {
       setActorState(false);
     }
   };
+
+  //UI main buttons: Films, Actors, Directors
 
   return (
     <div>

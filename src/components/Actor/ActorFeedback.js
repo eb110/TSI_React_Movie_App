@@ -1,6 +1,14 @@
+/*
+Project Author: Wladyslaw Figura
+Company: The Software Institute
+Date: October 2021
+*/
+
 import React, { useEffect, useState } from 'react';
 import '../../Styles/Actor/ActorFeedback.css';
 
+
+//ActorFeedback provides the UI for individual feedback operations
 function ActorFeedback(props) {
 
     const { id, feedback, idUser } = props.actorFeedback;
@@ -21,7 +29,7 @@ function ActorFeedback(props) {
 
     if (isLoading)
         return <p> Loading...</p>
-        
+
     return (
         <div>
             <div>

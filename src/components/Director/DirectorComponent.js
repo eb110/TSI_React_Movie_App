@@ -1,3 +1,9 @@
+/*
+Project Author: Wladyslaw Figura
+Company: The Software Institute
+Date: October 2021
+*/
+
 import React, { useEffect, useState } from 'react';
 import coppola from '../../img/coppola.JPG';
 import kubrik from '../../img/kubrik.JPG';

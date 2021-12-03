@@ -1,7 +1,17 @@
-import React, { useEffect, useState } from 'react';
+/*
+Project Author: Wladyslaw Figura
+Company: The Software Institute
+Date: October 2021
+*/
+
+import React, { useState } from 'react';
 
 import ActorFeedback from './ActorFeedback';
 import '../../Styles/Actor/ActorTodo.css';
+
+//Actor Todo is a presentation of http requests as
+//Post, Get, Delete and Update
+//of the feedbacks
 
 function ActorTodo(props) {
 
@@ -46,6 +56,8 @@ function ActorTodo(props) {
         });
     }
 
+
+    //delete functionality
     const handleDeleteFeedback = async (idDelete) => {
         setInputFeedbackState({
             ...inputFeedbackState,
@@ -57,7 +69,7 @@ function ActorTodo(props) {
         updateFeedbacks();
     }
 
-    //button Update
+    //button Update which represents the PUT functionality
     const handleUpdateInit = async () => {
         if (!inputFeedbackState.inputFeedback) {
             console.log("empty" + inputFeedbackState.inputFeedback);
@@ -87,6 +99,7 @@ function ActorTodo(props) {
         updateFeedbacks();
     }
 
+    //POST functionality
     const handleNewInput = async () => {
         if (!inputFeedbackState.inputFeedback) {
             setInputFeedbackState({
@@ -110,6 +123,7 @@ function ActorTodo(props) {
         updateFeedbacks();
     }
 
+    //Get http request
     const updateFeedbacks = async () => {
         let tempfedb = await fetch(`${props.url}/actorFeedback/getAll`)
             .then((res) => res.json()).then((data) => data.filter((actor) => actor.idActor === id));
@@ -132,7 +146,7 @@ function ActorTodo(props) {
     }
 
     const { error } = inputFeedbackState;
-    
+
     return (
         <div className="actorTodo">
             <div className="row">

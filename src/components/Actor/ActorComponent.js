@@ -1,3 +1,9 @@
+/*
+Project Author: Wladyslaw Figura
+Company: The Software Institute
+Date: October 2021
+*/
+
 import React, { useEffect, useState } from 'react';
 import bale from '../../img/bale.JPG';
 import brando from '../../img/brando.JPG';
@@ -16,6 +22,8 @@ function ActorComponent(props) {
     const [isLoading, setIsLoading] = useState(true);
     let actorIndex = 0;
 
+    //Recreation of actors
+
     useEffect(() => {
         const myFetch = async () => {
             setIsLoading(true);
@@ -29,6 +37,8 @@ function ActorComponent(props) {
 
     if (isLoading)
         return <p> Loading...</p>
+
+    //Actors are createad according to the data base recreated list of actors
 
     return (
         <div>
